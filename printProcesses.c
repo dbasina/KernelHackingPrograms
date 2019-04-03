@@ -36,10 +36,10 @@ int main()
 	for(int i = 0; i<iter; i++)
 	{
 		long int policyValue = syscall(398,UserID,&count,i,&pid,&comm,&prio,&policy);
-
+		prio = -(prio-139);
 		if(policyValue==0)
         	{
-               		printf("PID: %d\t\t COMM: %s\t\t PRIO: %d\t\t CLS: TS\n",pid,comm,prio);
+			printf("PID: %d\t\t COMM: %s\t\t PRIO: %d\t\t CLS: TS\n",pid,comm,prio);
         	}
 
 		if(policyValue==1)
